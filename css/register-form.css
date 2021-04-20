@@ -1,0 +1,23 @@
+.register-form .reg-btn {
+    margin: auto;
+    width: 100%;
+    height: 30px;
+
+    border-radius: 5px;
+    outline: none;
+    background: #4fcf1d;
+    color: #FFFFFF;
+    background-color: #24AAE8;
+    border: 1px solid #24AAE8;
+}
+
+.register-form .title {
+    text-align: center;
+    margin: 0.5% 0px;
+}
+
+.register-form .sub-title {
+    margin-bottom: 5px;
+    font-size: 13px;
+    text-align: center;
+}
