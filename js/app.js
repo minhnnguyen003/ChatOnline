@@ -1,6 +1,6 @@
-import InputWrapper from '../component/InputWrapper.js';
-import RegisterForm from '../component/RegisterForm.js';
-
+import InputWrapper from './component/InputWrapper.js';
+import RegisterForm from './component/RegisterForm.js';
+import LoginForm from './component/loginForm.js';
 function hello(name) {
     return "Xin chào " + name;
 };
