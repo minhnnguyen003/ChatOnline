@@ -1,3 +1,5 @@
+import { register } from "../models/user.js";
+
 const $template = document.createElement('template');
 
 $template.innerHTML = `
@@ -31,19 +33,17 @@ export default class RegisterForm extends HTMLElement {
             event.preventDefault();
             console.log("Register form submitted");
             
-            let isPassed = true;
-
-            this.$name.validate(value => {
+            let isPassed =  this.$name.validate(value => {
                 return value != '';
-            }, "Invalid Name");
+            }, "Invalid Name") &
 
             this.$email.validate(value => {
                 return value != '';
-            }, "Invalid Email");
+            }, "Invalid Email") &
 
             this.$password.validate(value => {
                 return value != '';
-            }, "Invalid Password");
+            }, "Invalid Password") &
             
             this.$passwordCf.validate(value => {
                 return value != '';
@@ -53,12 +53,14 @@ export default class RegisterForm extends HTMLElement {
                 return value == this.$password.value;
             }, "Password is not match");
             
+            let data = {
+                name: this.$name.value,
+                email: this.$email.value,
+                password: this.$password.value,
+            };
+
             if(isPassed) {
-                let data = {
-                    name: this.$name.value,
-                    email: this.$email.value,
-                    password: this.$password.value,
-                };
+                register(data.name, data.email, data.password);  
             }
         }
     }

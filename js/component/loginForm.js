@@ -1,3 +1,5 @@
+import { login } from "../models/user.js";
+
 const $template = document.createElement('template');
 
 $template.innerHTML = `
@@ -8,7 +10,7 @@ $template.innerHTML = `
     <input-wrapper class="email" placeholder="Your Email" type="email" error = ""></input-wrapper>
     <input-wrapper class="pass" placeholder="Password" type="password" error = ""></input-wrapper>
 
-    <button class="reg-btn">Register</button>
+    <button class="login-btn">Login</button>
     </form>
 `;
 
@@ -25,12 +27,9 @@ export default class LoginForm extends HTMLElement {
     connectedCallback() {
         this.$loginForm.onsubmit = (event) => {
             event.preventDefault();
-            console.log("Register form submitted");
+            console.log("Sign In");
             
-            let isPassed = true;
-
-           
-            this.$email.validate(value => {
+            let isPassed = this.$email.validate(value => {
                 return value != '';
             }, "Invalid Email") &
 
@@ -38,11 +37,13 @@ export default class LoginForm extends HTMLElement {
                 return value != '';
             }, "Invalid Password");
 
+            let data = {
+                email: this.$email.value,
+                password: this.$password.value,
+            };
+
             if(isPassed) {
-                let data = {
-                    email: this.$email.value,
-                    password: this.$password.value,
-                };
+              login(data.email, data.password);  
             }
         }
     }
