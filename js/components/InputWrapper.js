@@ -1,19 +1,16 @@
 const $template = document.createElement('template');
-
 $template.innerHTML = `
     <div class="input-wrapper">
         <input type="text" class="input-main">
-        <div class="input-error">No Username</div>
+        <div class="input-error">Input error message</div>
     </div>
 `;
-
-
 
 export default class InputWrapper extends HTMLElement {
     constructor() {
         super();
         this.appendChild($template.content.cloneNode(true));
-        
+
         this.$main = this.querySelector(".input-main");
         this.$error = this.querySelector(".input-error");
     }
@@ -23,27 +20,24 @@ export default class InputWrapper extends HTMLElement {
     }
 
     attributeChangedCallback(attrName, oldValue, newValue) {
-        switch(attrName) {
-            case 'placeholder':
-                this.$main.placeholder = newValue;
-                break;
-            case 'error':
-                this.$error.innerHTML = newValue;
-                break;
-            case 'type':
-                this.$main.type = newValue
-                break;
+        if(attrName == 'placeholder') {
+            this.$main.placeholder = newValue;
+        } else if(attrName == 'error') {
+            this.$error.innerHTML = newValue;
+        } else if(attrName == 'type') {
+            this.$main.type = newValue;
         }
     }
 
     validate(condition, error) {
-        let val = this.$main.value;
-        if(condition(val)) {
+        let value = this.$main.value;
+        if(condition(value)) {
             this.setAttribute('error', '');
             return true;
+        } else {
+            this.setAttribute('error', error);
+            return false;
         }
-        this.setAttribute('error', error);
-        return false;
     }
 
     get value() {

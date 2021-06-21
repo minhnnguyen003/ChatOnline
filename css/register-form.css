@@ -1,23 +1,18 @@
-.register-form .reg-btn {
-    margin: auto;
+.register-form .register-btn {
     width: 100%;
     height: 30px;
-
-    border-radius: 5px;
-    outline: none;
-    background: #4fcf1d;
     color: #FFFFFF;
-    background-color: #24AAE8;
-    border: 1px solid #24AAE8;
+    background-color: #4A8AF4;
+    border: 1px solid #4A8AF4;
+    border-radius: 3px;
 }
 
 .register-form .title {
     text-align: center;
-    margin: 0.5% 0px;
+    margin: 30px 0px;
 }
 
 .register-form .sub-title {
-    margin-bottom: 5px;
-    font-size: 13px;
+    margin-bottom: 10px;
     text-align: center;
 }

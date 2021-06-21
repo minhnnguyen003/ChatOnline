@@ -2,14 +2,5 @@
 @import url('./input-wrapper.css');
 @import url('./appstat.css');
 @import url('./user-action.css');
-
-#form {
-    display: flexbox;
-    margin: 3% auto auto auto;
-    background: #ffffff;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 800px;
-    height: 400px;
-}
+@import url('./sendMessageForm.css');
 

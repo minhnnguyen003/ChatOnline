@@ -1,0 +1,13 @@
+.app-stat .stat {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.app-stat .stat > i {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+}

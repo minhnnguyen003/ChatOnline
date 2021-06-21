@@ -1,24 +1,15 @@
-import InputWrapper from './component/InputWrapper.js';
-import RegisterForm from './component/RegisterForm.js';
-import LoginForm from './component/loginForm.js';
-import {authStateChanged} from './models/user.js';
-import AppStat from './component/appstat.js'
-import UserActions from './component/userActions.js'
-authStateChanged();
-// VD về CallBack
-// function saysth(cb) {
-//     console.log(typeof(cb));
-//     /*
-//         cb = function(name) {
-//             return "Hmmm" + name;
-//         }
-//      */
-//     let name = "Minh";
-    
-//     console.log(cb(name));
-// };
+import InputWrapper from "./components/InputWrapper.js";
+import RegisterForm from "./components/RegisterForm.js";
+import LoginForm from "./components/LoginForm.js";
+import AppStat from "./components/AppStat.js";
+import UserActions from "./components/UserActions.js";
+import MessageContainer from "./components/MessageContainer.js";
+import MessageList from "./components/MessageList.js";
+import SendMessageForm from "./components/sendMessageForm.js"
 
-// saysth(hello);
-// function hello(name) {
-//     return "Xin chào " + name;
-// };
+import AuthScreen from "./screens/AuthScreen.js";
+import ChatScreen from "./screens/ChatScreen.js";
+
+import { authStateChanged } from "./models/user.js";
+
+authStateChanged();
